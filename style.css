@@ -1,0 +1,79 @@
+*{margin:0;padding:0;outline:0;font-size:1em;font-weight:normal;font-style:normal;border:0;text-decoration:none;list-style-type:none;box-sizing:border-box;}
+
+body {
+	font-family: 'JetBrains Mono', monospace;
+	width: 100%;
+	background-color: #EDF2F4;
+	color: #8D99AE;
+
+}
+.thicc { 	font-weight: 800; }
+.dark {	color: #2B2D42; }
+.highlight { color: #D90429; }
+
+.container {
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  overflow-y: scroll;
+  /* scroll-snap-points-y: repeat(100vh); */
+  scroll-snap-type: y mandatory;
+  will-change: scroll-snap-type;
+	background: repeating-linear-gradient(
+	  180deg,
+	  transparent,
+	  transparent 90px,
+	  #8D99AE 90px,
+	  #8D99AE 91px
+	);
+}
+@media screen and (min-width: 992px) {
+	.container {
+		background: repeating-linear-gradient(
+		  180deg,
+		  transparent,
+		  transparent 90px,
+		  #8D99AE 90px,
+		  #8D99AE 91px
+		);
+	}
+}
+
+section {
+	padding: 0 30px;
+  /* position: sticky;
+  top: 0; */
+  display: flex;
+  align-items:flex-start;
+  justify-content:flex-start;
+  scroll-snap-align: start;
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+}
+section p {
+	font-size: 30px;
+	line-height: 90px;
+	font-style: italic;
+}
+section p.tidbit { text-indent: 75px; }
+
+@media screen and (min-width: 992px) {
+	section p.tidbit { text-indent: 120px; }
+	section p {
+		font-size: 45px;
+		line-height: 90px;
+		width: 75%;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	section p {
+		width: 50%;
+	}
+}
+
+section.fixed {
+	position: fixed;
+	pointer-events: none;
+}
