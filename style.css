@@ -36,15 +36,15 @@ a:hover {
 		background: repeating-linear-gradient(
 		  180deg,
 		  transparent,
-		  transparent 90px,
-		  #8D99AE 90px,
-		  #8D99AE 91px
+			transparent 89px,
+		  #8D99AE 89px,
+		  #8D99AE 90px
 		);
 	}
 }
 
 section {
-	padding: 0 0px;
+	padding: 0 30px;
   /* position: sticky;
   top: 0; */
   display: flex;
