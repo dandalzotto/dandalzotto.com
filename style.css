@@ -5,11 +5,15 @@ body {
 	width: 100%;
 	background-color: #EDF2F4;
 	color: #8D99AE;
-
 }
 .thicc { 	font-weight: 800; }
 .dark {	color: #2B2D42; }
 .highlight { color: #D90429; }
+
+a:hover {
+	color: #D90429;
+	position: relative;
+}
 
 .container {
   width: 100%;
