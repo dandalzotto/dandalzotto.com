@@ -75,5 +75,6 @@ section p.tidbit { text-indent: 72px; }
 
 section.fixed {
 	position: fixed;
-	pointer-events: none;
+	width: 130px;
+  height: 90px;
 }
