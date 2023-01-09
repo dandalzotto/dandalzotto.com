@@ -31,11 +31,10 @@ h2 { font-weight: 300; }
     padding: 50px;
   }
   .lhs {
-    width: 50%;
     position:fixed;
   }
   .rhs {
-    width: 50%;
+    width: 55%;
     position: absolute;
     right:0;
   }
@@ -78,7 +77,7 @@ a::after, a::before {
   content: '';
   display: block;
   position: absolute;
-  border-color: #FD6815;
+  border-color: #fda085;
   border-style: solid;
   border-width: 0px;
 }
@@ -103,5 +102,5 @@ a:hover,a:visited {
   background-image: linear-gradient(120deg, #F6CA00 0%, #FD6815 100%);
 }
 a:hover:before, a:hover:after {
-  border-color:#fda085;
+  border-color:#FD6815;
 }
