@@ -8,7 +8,7 @@ body {
   color: #212738;
   background-color: #fff; /*003459*/
 }
-h1, h2 {
+h1, p {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 35px;
   line-height: 1.5;
@@ -16,51 +16,7 @@ h1, h2 {
   opacity:0;
 }
 h1 { font-weight: 700; }
-h2 { font-weight: 300; }
-
-@media (min-width:641px)  {
-/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-}
-
-@media (min-width:961px)  {
-  /* tablet, landscape iPad, lo-res laptops ands desktops */
-  body {
-    padding:0;
-  }
-  body > div {
-    padding: 50px;
-  }
-  .lhs {
-    position:fixed;
-  }
-  .rhs {
-    width: 55%;
-    position: absolute;
-    right:0;
-  }
-}
-@media (min-width:1025px) {
-  /*big landscape tablets, laptops, and desktops */
-  h1, h2 {
-    font-size: 50px;
-  }
-}
-@media (min-width:1281px) {
-  /* hi-res laptops and desktops */
-  .rhs { width: 55%; }
-  h1, h2 {
-    font-size: 66.66px;
-    padding-bottom: 100px;
-  }
-}
-@media (min-width:1601px) {
-  /* hi-res laptops and desktops */
-  .rhs { width: 60%; }
-  h1, h2 {
-    font-size: 75px;
-    padding-bottom: 100px;
-  }
-}
+p { font-weight: 300; }
 
 a {
   display: inline-block;
@@ -81,17 +37,17 @@ a::after, a::before {
   border-style: solid;
   border-width: 0px;
 }
-a::before {
-  top:8px;
-  right:4.5px;
+a::before { /* — part of arrow*/
+  bottom: 21.5px;
+  right: 5.5px;
+  width: 34px;
+  height: 26px;
   transform: rotate(45deg);
   border-right-width: 2px;
-  width: 20px;
-  height: 20px;
 }
-a::after {
-  top:16px;
-  right:0px;
+a::after { /* > part of arrow */
+  bottom: 16px;
+  right: 1px;
   width: 15px;
   height: 15px;
   border-top-width: 2px;
@@ -103,4 +59,51 @@ a:hover,a:visited {
 }
 a:hover:before, a:hover:after {
   border-color:#FD6815;
+}
+
+
+@media (min-width:961px)  {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  body {
+    padding:0;
+  }
+  body > div {
+    padding: 50px;
+  }
+  .lhs {
+    position:fixed;
+  }
+  .rhs {
+    width: 55%;
+    position: absolute;
+    right:0;
+  }
+}
+@media (min-width:1025px) {
+  /*big landscape tablets, laptops, and desktops */
+  h1, p {
+    font-size: 50px;
+  }
+  a::before { bottom: 26.5px;}
+  a::after { bottom: 21px; }
+}
+@media (min-width:1281px) {
+  /* hi-res laptops and desktops */
+  .rhs { width: 55%; }
+  h1, p {
+    font-size: 66.66px;
+    padding-bottom: 100px;
+  }
+  a::before { bottom: 30.5px; }
+  a::after { bottom: 25px; }
+}
+@media (min-width:1601px) {
+  /* hi-res laptops and desktops */
+  .rhs { width: 60%; }
+  h1, p {
+    font-size: 75px;
+    padding-bottom: 100px;
+  }
+  a::before { bottom: 35.5px; }
+  a::after { bottom: 30px; }
 }
