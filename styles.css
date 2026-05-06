@@ -1,0 +1,80 @@
+/* styles.css */
+:root {
+  --bg: #252422;
+  --text: #fffcf2;
+  --link: #eb5e28;
+  --dim: #ccc5b9;
+}
+
+
+.doto {
+  font-family: "Doto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings: 
+    "ROND" 100;
+}
+
+body {
+    margin:0;
+    padding:0;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+ul { 
+    margin:0;
+    margin: 0 auto;
+}
+li {
+    margin:0;
+    line-height: 1;
+    list-style-type: none;
+}
+.dim {
+    color: var(--dim);
+}
+
+/* 1. Mobile First (Default size for small screens) */
+ul { 
+    padding:30px 0px;
+    width: 360px;
+}
+li { font-size: 20px; }
+
+/* 2. Tablet & Up (Standard breakpoint: 768px) */
+@media (min-width: 768px) {
+  ul { width: 700px; }
+  li { font-size: 38px; }
+}
+/* 3. Desktop & Up (Standard breakpoint: 1024px) */
+@media (min-width: 1024px) {
+    ul { width: 960px; }
+    li { font-size: 53px; }
+}
+@media (min-width: 1200px) {
+    ul { width: 1100px; }
+    li { font-size: 60px; }
+}
+
+a { 
+    color: var(--link);
+    text-decoration: none;
+}
+a:hover {
+    opacity: .75;
+}
+
+.fake-link {
+    text-decoration: underline;
+    cursor: pointer;
+    color: var(--link);
+    text-decoration: none;
+}
+
+/* Optional: Slight opacity change on hover to mimic a real link interaction */
+.fake-link:hover {
+    opacity: 0.75;
+}
+
