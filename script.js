@@ -5,10 +5,12 @@ function decodeEntities(encodedString) {
     return textarea.value;
 }
 
+
 // 1. The bulletproof helper function
 function typeLine(element, text, options, isLastLine) {
     return new Promise((resolve) => {
         const typewriter = new Typewriter(element, options);
+
         typewriter
             .typeString(text)
             .pauseFor(100)
@@ -27,15 +29,15 @@ function typeLine(element, text, options, isLastLine) {
 
 // 2. The fully dynamic sequence
 async function runSequence() {
-    // Grabs EVERY element where the ID starts with "line"
-    const elements = document.querySelectorAll('[id^="line"]');
+    // Grabs EVERY element that has the class "typewriter-line"
+    const elements = document.querySelectorAll('.typewriter-line');
 
     // Extract the text/HTML and fix entities
     const extractedData = Array.from(elements).map(el => {
         const text = el.innerHTML.trim()
             .replace(/&amp;/g, '&')
             .replace(/&gt;/g, '>')
-            .replace(/&nbsp;/g, '\u00A0');         
+            .replace(/&nbsp;/g, '\u00A0');       
         
         el.innerHTML = ''; // Wipe it instantly for the Typewriter
         return { element: el, text: text };
@@ -48,12 +50,27 @@ async function runSequence() {
         const cursorSymbol = isLast ? "" : "";
 
         // Wait for this line to finish before moving to the next
-        await typeLine(item.element, item.text, { delay: 0, cursor: cursorSymbol }, isLast);
+        await typeLine(item.element, item.text, { delay: 10, cursor: cursorSymbol }, isLast);
     }
 }
 
 // Kick it off!
 runSequence();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // --- 1. LIVE LA TIME ---
