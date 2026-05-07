@@ -13,7 +13,7 @@ function typeLine(element, text, options, isLastLine) {
 
         typewriter
             .typeString(text)
-            .pauseFor(100)
+            .pauseFor(50)
             .callFunction((state) => {
                 if (!isLastLine) {
                     if (state && state.elements && state.elements.cursor) {
@@ -50,7 +50,7 @@ async function runSequence() {
         const cursorSymbol = isLast ? "" : "";
 
         // Wait for this line to finish before moving to the next
-        await typeLine(item.element, item.text, { delay: 10, cursor: cursorSymbol }, isLast);
+        await typeLine(item.element, item.text, { delay: 5, cursor: cursorSymbol }, isLast);
     }
 }
 
