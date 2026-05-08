@@ -37,6 +37,7 @@ async function runSequence() {
         const text = el.innerHTML.trim()
             .replace(/&amp;/g, '&')
             .replace(/&gt;/g, '>')
+            .replace(/&lt;/g, '>')
             .replace(/&nbsp;/g, '\u00A0');       
         
         el.innerHTML = ''; // Wipe it instantly for the Typewriter
