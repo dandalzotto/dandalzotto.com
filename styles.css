@@ -2,10 +2,23 @@
 :root {
   --bg: #252422;
   --text: #fffcf2;
-  --link: #eb5e28;
+  --link: rgb(255, 35, 90);
   --dim: #8a8780;
 }
 
+
+/* Hide the raw text while the font is loading */
+.typewriter-line {
+    opacity: 0;
+    min-height: 1.2em; /* Prevents vertical height jumping */
+    white-space: pre;   /* Critical for monospace alignment and spaces */
+}
+
+#la-weather, #la-time {
+    display: inline-block;
+    min-width: 5ch;
+    text-align: right;
+}
 
 .doto {
   font-family: "Doto", sans-serif;
@@ -31,6 +44,7 @@ li {
     margin:0;
     line-height: 1;
     list-style-type: none;
+    display: block;
 }
 .dim {
     color: var(--dim);
@@ -40,8 +54,15 @@ li {
 ul { 
     padding:30px 0px;
     width: 360px;
+    min-width: 31ch;
 }
 li { font-size: 20px; }
+
+#la-weather, #la-time {
+    display: inline-block; /* Allows the span to have a predictable width/height */
+    min-width: 5ch;        /* Reserves space for 5 characters */
+    vertical-align: bottom; 
+}
 
 /* 2. Tablet & Up (Standard breakpoint: 768px) */
 @media (min-width: 768px) {
@@ -54,7 +75,7 @@ li { font-size: 20px; }
     li { font-size: 53px; }
 }
 @media (min-width: 1200px) {
-    ul { width: 1100px; }
+    ul { width: 1150px; }
     li { font-size: 60px; }
 }
 
@@ -62,8 +83,9 @@ a {
     color: var(--link);
     text-decoration: none;
 }
-a:hover {
-    opacity: .75;
+a:hover,
+.fake-link:hover {
+    filter: brightness(150%); /* Increases brightness by 50% */
 }
 
 .fake-link {
@@ -73,8 +95,4 @@ a:hover {
     text-decoration: none;
 }
 
-/* Optional: Slight opacity change on hover to mimic a real link interaction */
-.fake-link:hover {
-    opacity: 0.75;
-}
 
